@@ -29,8 +29,12 @@ fastify-cli can also help with generating some project scaffolding to kickstart 
       |		
       |-----services[Should act as a service to communicate with model for getting the required data]
       |       |
-
-
+      |
+      |
+     Test
+      |
+      |------test.js[Unit test cases should be written with the help of chai/mocha.To run the test case simple run : npm test]
+      |   
 ##Change in .env to run the application with below environment.
 NODE_ENV =  development  
 NODE_ENV =  production
@@ -42,8 +46,7 @@ NODE_ENV =  production
 10. For calling of services or verify the result of services you can call with the help of postman or swagger interface it self.
      as a curl command we can call also call the  XKCD service api : 
      curl -X GET "http://localhost:8065/api/xkcd" -H "accept: application/json"
-     result will display in console as well as from the the client calling api.
+     result will display in console as well as on the the client calling api.
 
 11. Note : As per the implementaion of API we inserting the value into the XKCD table after calling the api.
            As of now always calling the XKCD api not fetching with DB assuming that changes do occur in the existing xkcd comics api.(https://xkcd.com/1/info.0.json)   
-     

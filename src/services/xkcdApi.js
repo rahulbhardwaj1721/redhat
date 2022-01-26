@@ -39,15 +39,20 @@ exports.getXkcdData = async (req, reply) => {
                 name: result[i].comic,
                 altext: result[i].comic_meta.alt_text,
                 imagelink: result[i].comic_meta.image_link
-              })
+              }).catch(err => {
+                console.error(`Insertion failed--> `, err);
+                reply.send(err);
+              });
             }
           }).catch(err => {
-            console.error(`Insertion failed--> `, err);
+            console.error(`Select failed --> `, err);
+            reply.send(err);
           });
 
         })
         .catch(err => {
           console.error(`fetchComics --> `, err);
+          reply.send(err);
         });
     }
     console.log(result);
@@ -55,5 +60,6 @@ exports.getXkcdData = async (req, reply) => {
 
   } catch (err) {
     console.error(`fetchComics --> `, err);
+    reply.send(err);
   }
 }
