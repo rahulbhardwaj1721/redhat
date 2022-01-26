@@ -14,7 +14,6 @@ describe('Sample unit test case for XKCD service', function () {
             .expect(200)
             .end((err, res) => {
                 if (err) {
-                    console.error(res.error);
                     return done(err);
                 }
                 res.status.should.equal(200);

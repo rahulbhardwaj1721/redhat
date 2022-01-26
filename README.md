@@ -38,6 +38,9 @@ fastify-cli can also help with generating some project scaffolding to kickstart 
 ##Change in .env to run the application with below environment.
 NODE_ENV =  development  
 NODE_ENV =  production
+In development mode logging is enabled 
+In production mode logging is disabled 
+
 
 
 7. Application hosted on localhost with port 8065.you can change it with .env file.
